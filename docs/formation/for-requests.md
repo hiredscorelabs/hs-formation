@@ -12,8 +12,8 @@ If you want to create an HTTP client that is production grade: operable, maintai
 Here's a canonical Google client, created with Formation:
 
 ```py
-from formation.for_requests import client, html_response
-from formation.middleware import request_logger
+from hs_formation.for_requests import client, html_response
+from hs_formation.middleware import request_logger
 from attr import attrib, attrs
 from attrs_serde import serde
 import structlog

@@ -10,7 +10,7 @@ A general logger middleware for requests. Will log context created by the [conte
 ## Usage
 
 ```py
-from formation.middleware import request_logger
+from hs_formation.middleware import request_logger
 
 @client
 class Google(object):

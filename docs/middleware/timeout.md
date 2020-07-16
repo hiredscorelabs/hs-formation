@@ -20,7 +20,7 @@ timeout(
 ## Usage
 
 ```py
-from formation.middleware import timeout
+from hs_formation.middleware import timeout
 
 @client
 class Google(object):

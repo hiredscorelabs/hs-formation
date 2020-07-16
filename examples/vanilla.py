@@ -1,5 +1,5 @@
-from formation import wrap, _CONTEXT
-from formation.middleware import retry, context_logger, context
+from hs_formation import wrap, _CONTEXT
+from hs_formation.middleware import retry, context_logger, context
 import structlog
 
 

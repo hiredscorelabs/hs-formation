@@ -19,7 +19,7 @@ retry(
 ## Usage
 
 ```py
-from formation.middleware import retry
+from hs_formation.middleware import retry
 
 @client
 class Google(object):

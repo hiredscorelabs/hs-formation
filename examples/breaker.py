@@ -1,6 +1,6 @@
-from formation.for_requests import client, html_response
+from hs_formation.for_requests import client, html_response
 import traceback
-from formation.middleware import (
+from hs_formation.middleware import (
     request_logger,
     circuit_breaker,
     trigger_breaker_if,

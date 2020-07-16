@@ -10,12 +10,12 @@ In this example we'll post data to _httpbin_, a popular development tool to use 
 First, let's import:
 
 ```py
-from formation.for_requests import client, json_response
-from formation.middleware import request_logger, ua, accept, timeout
+from hs_formation.for_requests import client, json_response
+from hs_formation.middleware import request_logger, ua, accept, timeout
 import structlog
 ```
 
-We use `client` to make our client, multiple middleware from `formation.middleware` and `structlog` to facilitate structured logging.
+We use `client` to make our client, multiple middleware from `hs_formation.middleware` and `structlog` to facilitate structured logging.
 
 
 This is all it takes to make a class into a full blown HTTP client powered by formation:
@@ -75,8 +75,8 @@ httpbin = HttpBin()
 And for the full listing:
 
 ```py
-from formation.for_requests import client, json_response
-from formation.middleware import request_logger, ua, accept, timeout
+from hs_formation.for_requests import client, json_response
+from hs_formation.middleware import request_logger, ua, accept, timeout
 import structlog
 
 

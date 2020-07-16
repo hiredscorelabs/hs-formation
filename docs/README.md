@@ -19,7 +19,7 @@ It can be used for any Python codebase and purpose:
 
 ```py
 from datetime.datetime import now
-from formation import wrap
+from hs_formation import wrap
 from requests import get
 
 def log(ctx, call):
@@ -46,12 +46,12 @@ fancy_get({'url':'https://google.com'})
 
 ## In Use with Requests
 
-Or, using `formation.for_requests` for the requests HTTP lib:
+Or, using `hs_formation.for_requests` for the requests HTTP lib:
 
 
 ```py
-from formation.for_requests import client, html_response
-from formation.middleware import request_logger
+from hs_formation.for_requests import client, html_response
+from hs_formation.middleware import request_logger
 from attr import attrib, attrs
 from attrs_serde import serde
 import structlog

@@ -23,7 +23,7 @@ request_id(
 ## Usage
 
 ```py
-from formation.middleware import request_id
+from hs_formation.middleware import request_id
 
 @client
 class Google(object):

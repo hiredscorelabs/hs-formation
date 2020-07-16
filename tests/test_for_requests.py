@@ -1,5 +1,5 @@
-from formation.for_requests import build_sender, apply_params
-from formation.middleware import ua, accept
+from hs_formation.for_requests import build_sender, apply_params
+from hs_formation.middleware import ua, accept
 import pytest
 
 

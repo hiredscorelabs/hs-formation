@@ -11,7 +11,7 @@ Sets request duration in context for other middleware to use down the pipeline. 
 ## Usage
 
 ```py
-from formation.middleware import request_duration
+from hs_formation.middleware import request_duration
 
 @client
 class Google(object):

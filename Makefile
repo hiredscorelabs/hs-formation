@@ -2,13 +2,19 @@ watch:
 	poetry run ptw -- --testmon
 
 cover:
-	pytest --cov=formation tests -sq
+	poetry run pytest --cov=formation tests -sq
 
 test:
-	pytest -vv --cov-report xml:cov.xml --cov=formation tests -sq
+	poetry run pytest -vv --cov-report xml:cov.xml --cov=formation tests -sq
 
 tox:
-	tox
+	poetry run tox
 
 release:
-	python ci/release.py
+	ci/release.sh patch
+
+release-minor:
+	ci/release.sh minor
+
+release-major:
+	ci/release.sh major

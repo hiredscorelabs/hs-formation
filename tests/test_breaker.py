@@ -1,6 +1,6 @@
 import pytest
 from .utils import DummyLogger
-from formation.middleware import (
+from hs_formation.middleware import (
     circuit_breaker,
     trigger_breaker_if,
     BreakerTriggerException,
