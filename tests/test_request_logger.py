@@ -1,7 +1,7 @@
 from .utils import DummyLogger
 from toolz.curried import update_in, keyfilter
-from formation.for_requests import build_sender
-from formation.middleware import (
+from hs_formation.for_requests import build_sender
+from hs_formation.middleware import (
     request_id,
     context,
     request_duration,

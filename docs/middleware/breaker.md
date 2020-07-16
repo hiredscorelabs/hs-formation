@@ -26,8 +26,8 @@ For detailed information about the above parameters, see [pybreaker](https://git
 ## Usage
 
 ```py
-from formation.for_requests import client
-from formation.middleware import circuit_breaker
+from hs_formation.for_requests import client
+from hs_formation.middleware import circuit_breaker
 
 @client
 class Google(object):

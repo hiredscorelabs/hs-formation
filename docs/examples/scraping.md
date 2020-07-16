@@ -10,8 +10,8 @@ Formation client recognizes that one of the popular tasks in Python, having a ri
 When you use `html_response` you get an xpath/css selector ready result:
 
 ```py
-from formation.for_requests import client, html_response
-from formation.middleware import request_logger
+from hs_formation.for_requests import client, html_response
+from hs_formation.middleware import request_logger
 from attr import attrib, attrs
 from attrs_serde import serde
 import structlog

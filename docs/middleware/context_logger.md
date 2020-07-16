@@ -10,7 +10,7 @@ A general logger middleware for anything with context. Will log context created 
 ## Usage
 
 ```py
-from formation.middleware import context_logger
+from hs_formation.middleware import context_logger
 
 @client
 class Google(object):

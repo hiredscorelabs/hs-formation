@@ -10,7 +10,7 @@ Sets `User-Agent` in request.
 ## Usage
 
 ```py
-from formation.middleware import ua
+from hs_formation.middleware import ua
 
 @client
 class Google(object):

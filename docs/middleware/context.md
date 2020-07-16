@@ -40,7 +40,7 @@ _Context:_
 ## Usage
 
 ```py
-from formation.middleware import context
+from hs_formation.middleware import context
 
 @client
 class Google(object):
@@ -58,7 +58,7 @@ class Google(object):
 _Accessing context from your middleware:_
 
 ```py
-from formation import _CONTEXT
+from hs_formation import _CONTEXT
 def my_mware(mime_type):
     def my_mware_middleware(ctx, call):
         c = ctx.get(_CONTEXT)

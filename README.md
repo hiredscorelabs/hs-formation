@@ -1,8 +1,8 @@
-![](media/cover.png)
+<!-- ![](media/cover.png) -->
 
 # Formation
-[![Build Status](https://travis-ci.org/jondot/formation.svg?branch=master)](https://travis-ci.org/jondot/formation.svg)
-[![Coverage Status](https://coveralls.io/repos/github/jondot/formation/badge.svg?branch=master)](https://coveralls.io/github/jondot/formation?branch=master)
+<!-- [![Build Status](https://travis-ci.org/jondot/formation.svg?branch=master)](https://travis-ci.org/jondot/formation.svg)
+[![Coverage Status](https://coveralls.io/repos/github/jondot/formation/badge.svg?branch=master)](https://coveralls.io/github/jondot/formation?branch=master) -->
 
 A generic functional middleware infrastructure for Python.
 
@@ -10,7 +10,7 @@ Take a look:
 
 ```py
 from datetime.datetime import now
-from formation import wrap
+from hs_formation import wrap
 from requests import get
 
 def log(ctx, call):

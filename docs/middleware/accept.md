@@ -10,7 +10,7 @@ Sets `Content-Type` in request.
 ## Usage
 
 ```py
-from formation.middleware import accept
+from hs_formation.middleware import accept
 
 @client
 class Google(object):

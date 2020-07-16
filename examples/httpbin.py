@@ -1,5 +1,5 @@
-from formation.for_requests import client, json_response
-from formation.middleware import request_logger, ua, accept, timeout
+from hs_formation.for_requests import client, json_response
+from hs_formation.middleware import request_logger, ua, accept, timeout
 import structlog
 
 

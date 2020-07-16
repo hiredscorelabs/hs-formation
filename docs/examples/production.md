@@ -12,8 +12,8 @@ The idea about formation is to be able to compose and execute a set of middlewar
 First, the necessary imports:
 
 ```py
-from formation.for_requests import client, html_response
-from formation.middleware import (
+from hs_formation.for_requests import client, html_response
+from hs_formation.middleware import (
     request_logger,
     circuit_breaker,
     trigger_breaker_if,

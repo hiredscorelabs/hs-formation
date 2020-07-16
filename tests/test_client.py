@@ -1,6 +1,6 @@
 import pytest
-import formation.for_requests
-from formation.for_requests import (
+import hs_formation.for_requests
+from hs_formation.for_requests import (
     client,
     html_response,
     raw_response,
@@ -8,7 +8,7 @@ from formation.for_requests import (
     xmltodict_response,
     text_response,
 )
-from formation.middleware import request_logger, ua, accept, timeout, request_id
+from hs_formation.middleware import request_logger, ua, accept, timeout, request_id
 from attr import attrib, attrs
 from attrs_serde import serde
 import structlog
