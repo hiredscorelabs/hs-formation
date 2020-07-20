@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hs-formation"
-version = "4.1.0"
+version = "4.1.10"
 authors = ["Dotan Nahum <jondotan@gmail.com>", "HiredScoreLabs <oss@hiredscore.com>"]
 description = "A generic functional middleware infrastructure for Python."
 
@@ -8,15 +8,15 @@ license = "MIT"
 
 readme = "README.md"
 
-homepage = "https://github.com/jondot/formation"
-repository = "https://github.com/jondot/formation"
+homepage = "https://github.com/HiredScorelabs/hs-formation"
+repository = "https://github.com/HiredScorelabs/hs-formation"
 documentation = "https://github.com/jondot/formation"
 
 keywords = ["flask", "django", "requests", "middleware", "functional"]
 
 [tool.poetry.dependencies]
 
-python = ">2.7.13 <3.0.0 || ^3.7"
+python = ">=3.6.1"
 toolz = "^0.9.0"
 cytoolz = "^0.9.0"
 requests = "^2.20"
