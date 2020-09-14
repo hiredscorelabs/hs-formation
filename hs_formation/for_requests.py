@@ -70,6 +70,7 @@ class FormationHttpRequest(object):
     auth = attrib(default=None)
     data = attrib(default=None)
     json = attrib(default=None)
+    files = attrib(default=None)
     timeout = attrib(default=None)
     allow_redirects = attrib(default=True)
 
