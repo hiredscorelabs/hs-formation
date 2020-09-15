@@ -194,6 +194,7 @@ def requests_adapter(ctx):
         auth=req.auth,
         data=req.data,
         json=req.json,
+        files=req.files,
         timeout=req.timeout,
         allow_redirects=req.allow_redirects,
     )
