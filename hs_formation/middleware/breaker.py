@@ -8,8 +8,6 @@ class BreakerTriggerException(Exception):
 
 def breaker_logger(logger):
     class LogListener(pybreaker.CircuitBreakerListener):
-        "Listener used to log circuit breaker events."
-
         def state_change(self, cb, old_state, new_state):
             logger.warn(
                 "circuitbreaker.state_changed",
@@ -31,8 +29,10 @@ def trigger_breaker_if(trigger):
 
 
 def circuit_breaker(
-    logger, name, fail_max=5, reset_timeout=60, state_storage=None, exclude=[]
+    logger, name, fail_max=5, reset_timeout=60, state_storage=None, exclude=None
 ):
+    if exclude is None:
+        exclude = []
     breaker = pybreaker.CircuitBreaker(
         name=name,
         listeners=[breaker_logger(logger)],

@@ -1,0 +1,171 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://www.google.com/?q=formation
+  response:
+    body:
+      string: '<!doctype html><html dir="rtl" itemscope="" itemtype="http://schema.org/WebPage"
+        lang="iw"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta
+        content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title><script
+        nonce="LgeC/YIONg8qh62dA2zZRQ==">(function(){window.google={kEI:''72_XX4-FLICDhbIPq8C56Ak'',kEXPI:''0,1359409,730,224,5104,207,3204,10,1145,81,364,1499,817,383,246,5,1129,225,4414,3,65,769,216,1263,862,231,2948,7,1635,162,2195,1112996,1232,1196540,511,6,328978,13677,4855,32691,16115,28684,9188,8384,4858,1362,9290,3022,2823,1923,12841,4998,7931,5297,2054,920,873,10622,7432,7095,4518,2779,917,2277,8,2796,1593,1279,2212,530,149,1103,840,517,1466,58,156,4100,312,1137,2,2063,606,2023,1777,520,1947,729,1500,93,328,1286,3177,2011,3599,3227,1990,855,7,12354,5096,7539,337,4929,108,3407,908,2,941,2614,2397,1027,5308,4410,3,346,230,970,865,2550,2075,148,5990,7985,4,1528,2304,217,1019,271,874,405,1860,2393,537,43,1211,127,4,2298,17,446,460,1555,4067,1035,1316,3,3280,1426,2172,3323,1753,2658,872,3371,518,912,564,464,217,8,430,31,1303,2551,139,2883,211,990,52,3030,255,2214,2305,638,666,958,475,2,567,917,2144,1031,320,2361,55,745,212,3628,773,2,940,260,817,11,731,64,601,324,13,85,437,2,833,451,3652,1349,756,403,52,479,12,551,590,415,848,59,363,414,4,359,20,16,241,219,2028,49,565,6,523,385,3,1527,1341,673,1,336,613,715,173,168,323,777,922,29,18,978,238,290,405,90,430,494,704,948,440,3,26,228,306,24,10,147,610,147,287,3,13,2,208,348,1279,2,237,1286,453,289,418,412,68,513,397,38,668,133,4,1970,91,712,4,56,533,131,758,181,452,271,285,794,937,701,1023,5716866,3775,95,35,8798011,549,333,444,1,2,80,1,900,896,6,4,2,2551,1,748,141,59,736,563,1,4265,1,1,2,1017,9,305,3299,248,595,1,2232,124,6,23,2,3,13,3,5,14,2,5,1,66,23957762,2768162'',kBL:''ZWEf''};google.sn=''webhp'';google.kHL=''iw'';})();(function(){
+
+        google.lc=[];google.li=0;google.getEI=function(a){for(var b;a&&(!a.getAttribute||!(b=a.getAttribute("eid")));)a=a.parentNode;return
+        b||google.kEI};google.getLEI=function(a){for(var b=null;a&&(!a.getAttribute||!(b=a.getAttribute("leid")));)a=a.parentNode;return
+        b};google.ml=function(){return null};google.time=function(){return Date.now()};google.log=function(a,b,c,d,g){if(c=google.logUrl(a,b,c,d,g)){a=new
+        Image;var e=google.lc,f=google.li;e[f]=a;a.onerror=a.onload=a.onabort=function(){delete
+        e[f]};a.src=c;google.li=f+1}};google.logUrl=function(a,b,c,d,g){var e="",f=google.ls||"";c||-1!=b.search("&ei=")||(e="&ei="+google.getEI(d),-1==b.search("&lei=")&&(d=google.getLEI(d))&&(e+="&lei="+d));d="";!c&&google.cshid&&-1==b.search("&cshid=")&&"slh"!=a&&(d="&cshid="+google.cshid);c=c||"/"+(g||"gen_204")+"?atyp=i&ct="+a+"&cad="+b+e+f+"&zx="+google.time()+d;/^http:/i.test(c)&&"https:"==window.location.protocol&&(google.ml(Error("a"),!1,{src:c,glmm:1}),c="");return
+        c};}).call(this);(function(){google.y={};google.x=function(a,b){if(a)var c=a.id;else{do
+        c=Math.random();while(google.y[c])}google.y[c]=[a,b];return!1};google.lm=[];google.plm=function(a){google.lm.push.apply(google.lm,a)};google.lq=[];google.load=function(a,b,c){google.lq.push([[a],b,c])};google.loadAll=function(a,b){google.lq.push([a,b])};}).call(this);google.f={};(function(){
+
+        document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var
+        c=a.getAttribute("data-submitfalse");a="1"==c||"q"==c&&!a.elements.q.value?!0:!1}else
+        a=!1;a&&(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var
+        a;a:{for(a=b.target;a&&a!=document.documentElement;a=a.parentElement)if("A"==a.tagName){a="1"==a.getAttribute("data-nohref");break
+        a}a=!1}a&&b.preventDefault()},!0);}).call(this);
+
+        var a=window.location,b=a.href.indexOf("#");if(0<=b){var c=a.href.substring(b+1);/(^|&)q=/.test(c)&&-1==c.indexOf("#")&&a.replace("/search?"+c.replace(/(^|&)fp=[^&]*/g,"")+"&cad=h")};</script><style>#gbar,#guser{font-size:13px;padding-top:1px
+        !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:left}.gbh,.gbd{border-top:1px
+        solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media
+        all{.gb1{height:22px;margin-left:.5em;vertical-align:top}#gbar{float:right}}a.gb1,a.gb4{text-decoration:underline
+        !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf
+        .gb4{color:#900 !important}
+
+        </style><style>body,td,a,p,.h{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px
+        8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.h{color:#1558d6}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px}.gsfi,.lst{font:18px
+        arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display:inline-block;margin:3px
+        0 4px;margin-right:4px}input{font-family:inherit}body{background:#fff;color:#000}a{color:#4b11a8;text-decoration:none}a:hover,a:active{text-decoration:underline}.fl
+        a{color:#1558d6}a:visited{color:#4b11a8}.sblc{padding-top:5px}.sblc a{display:block;margin:2px
+        0;margin-right:13px;font-size:11px}.lsbb{background:#f8f9fa;border:solid 1px;border-color:#dadce0
+        #dadce0 #70757a #70757a;height:30px}.lsbb{display:block}#WqQANb a{display:inline-block;margin:0
+        12px}.lsb{background:url(/images/nav_logo229.png) 0 -261px repeat-x;border:none;color:#000;cursor:pointer;height:30px;margin:0;outline:0;font:15px
+        arial,sans-serif;vertical-align:top}.lsb:active{background:#dadce0}.lst:focus{outline:none}.tiah{width:458px}</style><script
+        nonce="LgeC/YIONg8qh62dA2zZRQ=="></script></head><body bgcolor="#fff"><script
+        nonce="LgeC/YIONg8qh62dA2zZRQ==">(function(){var src=''/images/nav_logo229.png'';var
+        iesg=false;document.body.onload = function(){window.n && window.n();if (document.images){new
+        Image().src=src;}
+
+        if (!iesg){document.f&&document.f.q.focus();document.gbqf&&document.gbqf.q.focus();}
+
+        }
+
+        })();</script><div id="mngb"><div id=gbar><nobr><b class=gb1>&#1495;&#1497;&#1508;&#1493;&#1513;</b>
+        <a class=gb1 href="https://www.google.co.il/imghp?hl=iw&tab=wi">&#1495;&#1497;&#1508;&#1493;&#1513;
+        &#1514;&#1502;&#1493;&#1504;&#1493;&#1514;</a> <a class=gb1 href="https://maps.google.co.il/maps?hl=iw&tab=wl">&#1502;&#1508;&#1493;&#1514;</a>
+        <a class=gb1 href="https://www.youtube.com/?gl=IL&tab=w1">YouTube</a> <a class=gb1
+        href="https://news.google.com/?tab=wn">&#1495;&#1491;&#1513;&#1493;&#1514;</a>
+        <a class=gb1 href="https://mail.google.com/mail/?tab=wm">Gmail</a> <a class=gb1
+        href="https://drive.google.com/?tab=wo">Drive</a> <a class=gb1 href="https://www.google.com/calendar?tab=wc">&#1497;&#1493;&#1502;&#1503;</a>
+        <a class=gb1 style="text-decoration:none" href="https://www.google.co.il/intl/iw/about/products?tab=wh"><u>&#1506;&#1493;&#1491;</u>
+        &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span
+        id=gbf class=gbf></span><span id=gbe></span><a href="http://www.google.co.il/history/optout?hl=iw"
+        class=gb4>&#1492;&#1497;&#1505;&#1496;&#1493;&#1512;&#1497;&#1497;&#1514;
+        &#1488;&#1514;&#1512;&#1497;&#1501;</a> | <a  href="/preferences?hl=iw" class=gb4>&#1492;&#1490;&#1491;&#1512;&#1493;&#1514;</a>
+        | <a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=iw&passive=true&continue=https://www.google.com/%3Fq%3Dformation&ec=GAZAAQ"
+        class=gb4>&#1499;&#1504;&#1497;&#1505;&#1492;</a></nobr></div><div class=gbh
+        style=left:0></div><div class=gbh style=right:0></div></div><center><br clear="all"
+        id="lgpd"><div id="lga"><img alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png"
+        style="padding:28px 0 14px" width="272" id="hplogo"><br><br></div><form action="/search"
+        name="f"><table cellpadding="0" cellspacing="0"><tr valign="top"><td width="25%">&nbsp;</td><td
+        align="center" nowrap=""><input name="ie" value="ISO-8859-1" type="hidden"><input
+        value="iw" name="hl" type="hidden"><input name="source" type="hidden" value="hp"><input
+        name="biw" type="hidden"><input name="bih" type="hidden"><div class="ds" style="height:32px;margin:4px
+        0"><div style="position:relative;zoom:1"><input class="lst tiah" style="margin:0;padding:5px
+        6px 0 8px;vertical-align:top;color:#000;padding-left:38px" autocomplete="off"
+        value="formation" title="&#1495;&#1497;&#1508;&#1493;&#1513; &#1489;-Google"
+        maxlength="2048" name="q" size="57"><img src="/textinputassistant/tia.png"
+        style="position:absolute;cursor:pointer;left:5px;top:4px;z-index:300" data-script-url="/textinputassistant/11/iw_tia.js"
+        id="tsuid1" alt="" height="23" width="27"><script nonce="LgeC/YIONg8qh62dA2zZRQ==">(function(){var
+        id=''tsuid1'';document.getElementById(id).onclick = function(){var s = document.createElement(''script'');s.src
+        = this.getAttribute(''data-script-url'');(document.getElementById(''xjsc'')||document.body).appendChild(s);};})();</script></div></div><br
+        style="line-height:0"><span class="ds"><span class="lsbb"><input class="lsb"
+        value="&#1495;&#1497;&#1508;&#1493;&#1513; &#1489;-Google" name="btnG" type="submit"></span></span><span
+        class="ds"><span class="lsbb"><input class="lsb" id="tsuid2" value="&#1497;&#1493;&#1514;&#1512;
+        &#1502;&#1494;&#1500; &#1502;&#1513;&#1499;&#1500;" name="btnI" type="submit"><script
+        nonce="LgeC/YIONg8qh62dA2zZRQ==">(function(){var id=''tsuid2'';document.getElementById(id).onclick
+        = function(){if (this.form.q.value){this.checked = 1;if (this.form.iflsig)this.form.iflsig.disabled
+        = false;}
+
+        else top.location=''/doodles/'';};})();</script><input value="AINFCbYAAAAAX9d9_2tUX9sAXWaz6n95VctrwRvZYFGb"
+        name="iflsig" type="hidden"></span></span></td><td class="fl sblc" align="right"
+        nowrap="" width="25%"><a href="/advanced_search?hl=iw&amp;authuser=0">&#1495;&#1497;&#1508;&#1493;&#1513;
+        &#1502;&#1514;&#1511;&#1491;&#1501;</a></td></tr></table><input id="gbv" name="gbv"
+        type="hidden" value="1"><script nonce="LgeC/YIONg8qh62dA2zZRQ==">(function(){var
+        a,b="1";if(document&&document.getElementById)if("undefined"!=typeof XMLHttpRequest)b="2";else
+        if("undefined"!=typeof ActiveXObject){var c,d,e=["MSXML2.XMLHTTP.6.0","MSXML2.XMLHTTP.3.0","MSXML2.XMLHTTP","Microsoft.XMLHTTP"];for(c=0;d=e[c++];)try{new
+        ActiveXObject(d),b="2"}catch(h){}}a=b;if("2"==a&&-1==location.search.indexOf("&gbv=2")){var
+        f=google.gbvu,g=document.getElementById("gbv");g&&(g.value=a);f&&window.setTimeout(function(){location.href=f},0)};}).call(this);</script></form><div
+        id="gac_scont"></div><div style="font-size:83%;min-height:3.5em"><br><div
+        id="gws-output-pages-elements-homepage_additional_languages__als"><style>#gws-output-pages-elements-homepage_additional_languages__als{font-size:small;margin-bottom:24px}#SIvCob{display:inline-block;line-height:28px;}#SIvCob
+        a{padding:0 3px;}.H6sW5{display:inline-block;margin:0 2px;white-space:nowrap}.z4hgWe{display:inline-block;margin:0
+        2px}</style><div id="SIvCob">Google &#1494;&#1502;&#1497;&#1504;&#1492; &#1489;:  <a
+        href="https://www.google.com/setprefs?sig=0_TNtNjUhO9FciDHE9zStdp1iAWw4%3D&amp;hl=ar&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwjPuI7-0M3tAhWAQUEAHStgDp0Q2ZgBCAU">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>    <a
+        dir="ltr" href="https://www.google.com/setprefs?sig=0_TNtNjUhO9FciDHE9zStdp1iAWw4%3D&amp;hl=en&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwjPuI7-0M3tAhWAQUEAHStgDp0Q2ZgBCAY">English</a>  </div></div></div><span
+        id="footer"><div style="font-size:10pt"><div style="margin:19px auto;text-align:center"
+        id="WqQANb"><a href="/intl/iw/ads/"> &#1508;&#1512;&#1505;&#1493;&#1501; &#1489;-Google</a><a
+        href="http://www.google.co.il/intl/iw/services/">&#1508;&#1514;&#1512;&#1493;&#1504;&#1493;&#1514;
+        &#1506;&#1505;&#1511;&#1497;&#1497;&#1501;</a><a href="/intl/iw/about.html">&#1492;&#1499;&#1493;&#1500;
+        &#1506;&#1500; Google</a><a dir="ltr" href="https://www.google.com/setprefdomain?prefdom=IL&amp;prev=https://www.google.co.il/&amp;sig=K_M6k35NoOQwLAKCm2ZBexTgRQTlM%3D">Google.co.il</a></div></div><p
+        style="font-size:8pt;color:#70757a">&copy; 2020 - <a href="/intl/iw/policies/privacy/">&#1508;&#1512;&#1496;&#1497;&#1493;&#1514;</a>
+        - <a href="/intl/iw/policies/terms/">&#1514;&#1504;&#1488;&#1497;&#1501;</a></p></span></center><script
+        nonce="LgeC/YIONg8qh62dA2zZRQ==">(function(){window.google.cdo={height:0,width:0};(function(){var
+        a=window.innerWidth,b=window.innerHeight;if(!a||!b){var c=window.document,d="CSS1Compat"==c.compatMode?c.documentElement:c.body;a=d.clientWidth;b=d.clientHeight}a&&b&&(a!=google.cdo.width||b!=google.cdo.height)&&google.log("","","/client_204?&atyp=i&biw="+a+"&bih="+b+"&ei="+google.kEI);}).call(this);})();(function(){var
+        u=''/xjs/_/js/k\x3dxjs.hp.en.5THRwtAPYFk.O/m\x3dsb_he,d/am\x3dAHiCOA/d\x3d1/rs\x3dACT90oFKbc9Z7G9_DuzW-Np9DtaSdO3Krg'';
+
+        var c=this||self,e=/^[\w+/_-]+[=]{0,2}$/,f=null,g=function(a){return(a=a.querySelector&&a.querySelector("script[nonce]"))&&(a=a.nonce||a.getAttribute("nonce"))&&e.test(a)?a:""},h=function(a){return
+        a};var l;var n=function(a,b){this.g=b===m?a:""},m={};setTimeout(function(){var
+        a=document;var b="SCRIPT";"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());b=a.createElement(b);a=u;if(void
+        0===l){var d=null;var k=c.trustedTypes;if(k&&k.createPolicy){try{d=k.createPolicy("goog#html",{createHTML:h,createScript:h,createScriptURL:h})}catch(p){c.console&&c.console.error(p.message)}l=d}else
+        l=d}a=(d=l)?d.createScriptURL(a):a;a=new n(a,m);b.src=a instanceof n&&a.constructor===n?a.g:"type_error:TrustedResourceUrl";(a=b.ownerDocument&&b.ownerDocument.defaultView)&&
+
+        a!=c?a=g(a.document):(null===f&&(f=g(c.document)),a=f);a&&b.setAttribute("nonce",a);google.timers&&google.timers.load&&google.tick&&google.tick("load","xjsls");document.body.appendChild(b)},0);})();(function(){window.google.xjsu=''/xjs/_/js/k\x3dxjs.hp.en.5THRwtAPYFk.O/m\x3dsb_he,d/am\x3dAHiCOA/d\x3d1/rs\x3dACT90oFKbc9Z7G9_DuzW-Np9DtaSdO3Krg'';})();function
+        _DumpException(e){throw e;}
+
+        function _F_installCss(c){}
+
+        (function(){google.jl={dw:false,em:[],emw:false,lls:''default'',pdt:0,snet:true,uwp:true};})();(function(){var
+        pmc=''{\x22d\x22:{},\x22sb_he\x22:{\x22agen\x22:true,\x22cgen\x22:true,\x22client\x22:\x22heirloom-hp\x22,\x22dh\x22:true,\x22dhqt\x22:true,\x22ds\x22:\x22\x22,\x22ffql\x22:\x22en\x22,\x22fl\x22:true,\x22host\x22:\x22google.com\x22,\x22isbh\x22:28,\x22jsonp\x22:true,\x22msgs\x22:{\x22cibl\x22:\x22&#1504;&#1497;&#1511;&#1493;&#1497;
+        &#1492;&#1495;&#1497;&#1508;&#1493;&#1513;\x22,\x22dym\x22:\x22&#1492;&#1488;&#1501;
+        &#1492;&#1514;&#1499;&#1493;&#1493;&#1504;&#1514; &#1500;:\x22,\x22lcky\x22:\x22&#1497;&#1493;&#1514;&#1512;
+        &#1502;&#1494;&#1500; &#1502;&#1513;&#1499;&#1500;\x22,\x22lml\x22:\x22&#1500;&#1502;&#1497;&#1491;&#1506;
+        &#1504;&#1493;&#1505;&#1507;\x22,\x22oskt\x22:\x22&#1499;&#1500;&#1497; &#1492;&#1494;&#1504;&#1492;\x22,\x22psrc\x22:\x22&#1495;&#1497;&#1508;&#1493;&#1513;
+        &#1494;&#1492; &#1492;&#1493;&#1505;&#1512; &#1502;\\u003Ca href\x3d\\\x22/history\\\x22\\u003E&#1492;&#1497;&#1505;&#1496;&#1493;&#1512;&#1497;&#1497;&#1514;
+        &#1492;&#1488;&#1497;&#1504;&#1496;&#1512;&#1504;&#1496;\\u003C/a\\u003E &#1513;&#1500;&#1498;\x22,\x22psrl\x22:\x22&#1492;&#1505;&#1512;&#1492;\x22,\x22sbit\x22:\x22&#1495;&#1497;&#1508;&#1493;&#1513;
+        &#1500;&#1508;&#1497; &#1514;&#1502;&#1493;&#1504;&#1492;\x22,\x22srch\x22:\x22&#1495;&#1497;&#1508;&#1493;&#1513;
+        &#1489;-Google\x22},\x22nrft\x22:false,\x22ovr\x22:{},\x22pq\x22:\x22formation\x22,\x22refpd\x22:true,\x22rfs\x22:[],\x22sbas\x22:\x220
+        3px 8px 0 rgba(0,0,0,0.2),0 0 0 1px rgba(0,0,0,0.08)\x22,\x22sbpl\x22:16,\x22sbpr\x22:16,\x22scd\x22:10,\x22stok\x22:\x22NpP2nnjzQtMhuWl7myPYlr1t_Ao\x22,\x22uhde\x22:false}}'';google.pmc=JSON.parse(pmc);})();</script>        </body></html>'
+    headers:
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Cache-Control:
+      - private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/html; charset=ISO-8859-1
+      Date:
+      - Mon, 14 Dec 2020 14:00:15 GMT
+      Expires:
+      - '-1'
+      P3P:
+      - CP="This is not a P3P policy! See g.co/p3phelp for more info."
+      Server:
+      - gws
+      Set-Cookie:
+      - 1P_JAR=2020-12-14-14; expires=Wed, 13-Jan-2021 14:00:15 GMT; path=/; domain=.google.com;
+        Secure
+      - NID=204=yA-VrolJ08AmoNUvKCJoi0v12mMrj-jH78iTWx0mDoR7qOBAeWbI-VlR1oNrGeNTxKRGeUJBlYjBHT78uEMgrRfFfRTD6t22XZ-mCD8LvYPZ0HzsuaKBoPROC1QpVoG3vt8gZnbNwaynR_qMzr1fYD3gFEmFGgRs4fe4lvw9fgc;
+        expires=Tue, 15-Jun-2021 14:00:15 GMT; path=/; domain=.google.com; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+    url: https://www.google.com/?q=formation
+version: 1

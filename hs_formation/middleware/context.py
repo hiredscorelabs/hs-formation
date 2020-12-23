@@ -32,6 +32,25 @@ def get_context(
     }
 
 
+def call_context_fnc(ctx, context_fn, scope, env, sha, version, getpid, gettid):
+    request_id = ctx.get(_REQ_ID, None)
+    request_parent_id = ctx.get(_REQ_PARENT_ID, None)
+    uid = get_in([_SESSION, _UID], None)
+
+    ctx[_CONTEXT] = context_fn(
+        env=env,
+        sha=sha,
+        version=version,
+        request_id=request_id,
+        request_parent_id=request_parent_id,
+        scope=scope,
+        uid=uid,
+        getpid=getpid,
+        gettid=gettid,
+    )
+    return ctx
+
+
 def context(
     context_fn=get_context,
     namespace="service",
@@ -43,22 +62,30 @@ def context(
     gettid=thread.get_ident,
 ):
     def context_middleware(ctx, call):
-        request_id = ctx.get(_REQ_ID, None)
-        request_parent_id = ctx.get(_REQ_PARENT_ID, None)
-        uid = get_in([_SESSION, _UID], None)
-
-        ctx[_CONTEXT] = context_fn(
-            env=env,
-            sha=sha,
-            version=version,
-            request_id=request_id,
-            request_parent_id=request_parent_id,
-            scope=scope,
-            uid=uid,
-            getpid=getpid,
-            gettid=gettid,
+        ctx = call_context_fnc(
+            ctx, context_fn, scope, env, sha, version, getpid, gettid
         )
         ctx = call(ctx)
+        return ctx
+
+    return context_middleware
+
+
+def async_context(
+    context_fn=get_context,
+    namespace="service",
+    scope="all",
+    env="local",
+    sha="dev",
+    version="0.01",
+    getpid=os.getpid,
+    gettid=thread.get_ident,
+):
+    async def context_middleware(ctx, call):
+        ctx = call_context_fnc(
+            ctx, context_fn, scope, env, sha, version, getpid, gettid
+        )
+        ctx = await call(ctx)
         return ctx
 
     return context_middleware

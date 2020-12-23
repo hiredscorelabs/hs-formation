@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://httpbin.org/xml
+  response:
+    body:
+      string: "<?xml version='1.0' encoding='us-ascii'?>\n\n<!--  A SAMPLE set of
+        slides  -->\n\n<slideshow \n    title=\"Sample Slide Show\"\n    date=\"Date
+        of publication\"\n    author=\"Yours Truly\"\n    >\n\n    <!-- TITLE SLIDE
+        -->\n    <slide type=\"all\">\n      <title>Wake up to WonderWidgets!</title>\n
+        \   </slide>\n\n    <!-- OVERVIEW -->\n    <slide type=\"all\">\n        <title>Overview</title>\n
+        \       <item>Why <em>WonderWidgets</em> are great</item>\n        <item/>\n
+        \       <item>Who <em>buys</em> WonderWidgets</item>\n    </slide>\n\n</slideshow>"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '522'
+      Content-Type:
+      - application/xml
+      Date:
+      - Mon, 14 Dec 2020 14:05:47 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 200
+      message: OK
+    url: https://httpbin.org/xml
+version: 1

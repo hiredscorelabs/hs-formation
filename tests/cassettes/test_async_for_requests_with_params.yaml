@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: some-data
+    headers:
+      x-custom:
+      - hello
+    method: GET
+    uri: http://example.com
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n<!DOCTYPE html PUBLIC
+        \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n         \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n\t<head>\n\t\t<title>400
+        - Bad Request</title>\n\t</head>\n\t<body>\n\t\t<h1>400 - Bad Request</h1>\n\t</body>\n</html>\n"
+    headers:
+      Content-Length:
+      - '349'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 14 Dec 2020 14:26:33 GMT
+      Server:
+      - ECSF (dcb/7EA7)
+    status:
+      code: 400
+      message: Bad Request
+    url: http://example.com
+version: 1

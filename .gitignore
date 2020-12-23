@@ -13,3 +13,6 @@ cov.xml
 node_modules/
 _book/
 pip-wheel-metadata/
+venv/
+.idea/
+.vscode/

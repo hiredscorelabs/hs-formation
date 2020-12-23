@@ -1,9 +1,10 @@
-from hs_formation.for_requests import build_sender, apply_params
+from hs_formation.for_aio_http import build_sender, apply_params
 from hs_formation.middleware import ua, accept
 import pytest
 
 
-def test_apply_params(snapshot):
+@pytest.mark.asyncio
+async def test_async_apply_params(snapshot):
     snapshot.assert_match(
         apply_params(
             "http://github.com/:user/:repo?q=foobar",
@@ -13,15 +14,17 @@ def test_apply_params(snapshot):
 
 
 @pytest.mark.vcr()
-def test_for_requests():
+@pytest.mark.asyncio
+async def test_async_for_requests():
     sender = build_sender(middleware=[])
-    sender("get", "http://example.com")
+    await sender("get", "http://example.com")
 
 
 @pytest.mark.vcr()
-def test_for_requests_with_params():
+@pytest.mark.asyncio
+async def test_async_for_requests_with_params():
     sender = build_sender(middleware=[])
-    sender(
+    await sender(
         "get",
         "http://example.com",
         headers={"x-custom": "hello"},
@@ -31,25 +34,28 @@ def test_for_requests_with_params():
 
 
 @pytest.mark.vcr()
-def test_ua():
+@pytest.mark.asyncio
+async def test_async_ua():
     sender = build_sender(middleware=[ua("foobar/1.0.0")])
-    sender(
+    await sender(
         "get", "http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"}
     )
 
 
 @pytest.mark.vcr()
-def test_accept():
+@pytest.mark.asyncio
+async def test_async_accept():
     sender = build_sender(middleware=[accept("application/json")])
-    sender(
+    await sender(
         "get", "http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"}
     )
 
 
 @pytest.mark.vcr()
-def test_cookies():
+@pytest.mark.asyncio
+async def test_async_cookies():
     sender = build_sender(middleware=[])
-    sender(
+    await sender(
         "get",
         "http://example.com",
         headers={"x-custom": "hello"},

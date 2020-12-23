@@ -23,7 +23,7 @@ def fail(times):
 @client
 class HttpBinNice(object):
     base_uri = "https://httpbin.org"
-    middleware = [retry(5), fail(3)]
+    middleware = [retry(max_retries=2, retry_in_between_call_sleep=1), fail(1)]
     response_as = json_response
 
     def get(self):
@@ -33,7 +33,7 @@ class HttpBinNice(object):
 @client
 class HttpBinBad(object):
     base_uri = "https://httpbin.org"
-    middleware = [retry(5), fail(10)]
+    middleware = [retry(max_retries=2, retry_in_between_call_sleep=1), fail(10)]
     response_as = json_response
 
     def get(self):

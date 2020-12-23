@@ -57,7 +57,7 @@ def client(cls=None):
 
 
 @attrs
-class FormationHttpRequest(object):
+class FormationHttpRequest:
     url = attrib()
     method = attrib(default="get")
 
@@ -139,7 +139,9 @@ def text_response(ctx):
     return res.text, res.status_code, res.headers
 
 
-def build_sender(middleware=[], base_uri=None, default_response_as=None):
+def build_sender(middleware=None, base_uri=None, default_response_as=None):
+    if middleware is None:
+        middleware = []
     wrapped = wrap(requests_adapter, middleware=middleware)
 
     def sender(method, url, session_context={}, params={}, response_as=None, **kwargs):
@@ -173,7 +175,9 @@ class Sender(object):
         return self.send("delete", path, **kwargs)
 
 
-def build(middleware=[], base_uri=None, response_as=None):
+def build(middleware=None, base_uri=None, response_as=None):
+    if middleware is None:
+        middleware = []
     return Sender(
         build_sender(
             middleware=middleware, base_uri=base_uri, default_response_as=response_as

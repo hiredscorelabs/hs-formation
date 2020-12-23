@@ -1,0 +1,33 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://httpbin.org/get
+  response:
+    body:
+      string: "{\n  \"args\": {}, \n  \"headers\": {\n    \"Accept\": \"*/*\", \n
+        \   \"Accept-Encoding\": \"gzip, deflate\", \n    \"Host\": \"httpbin.org\",
+        \n    \"User-Agent\": \"Python/3.7 aiohttp/3.7.3\", \n    \"X-Amzn-Trace-Id\":
+        \"Root=1-5fd9233f-62f48b8e2fc1ccb97ba10b37\"\n  }, \n  \"origin\": \"147.236.152.14\",
+        \n  \"url\": \"https://httpbin.org/get\"\n}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '310'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Dec 2020 20:57:35 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 200
+      message: OK
+    url: https://httpbin.org/get
+version: 1

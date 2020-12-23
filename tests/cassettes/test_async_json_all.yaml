@@ -1,0 +1,398 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - eefa0b3c-13ca-40b1-ac2c-fd0687b786e2
+    method: GET
+    uri: https://httpbin.org/get
+  response:
+    body:
+      string: "{\n  \"args\": {}, \n  \"headers\": {\n    \"Accept\": \"*/*\", \n
+        \   \"Accept-Encoding\": \"gzip, deflate\", \n    \"Content-Type\": \"application/json\",
+        \n    \"Host\": \"httpbin.org\", \n    \"User-Agent\": \"the-fabricator/1.0.0\",
+        \n    \"X-Amzn-Trace-Id\": \"Root=1-5fd9c580-4c7a842810cadbac05cd789c\", \n
+        \   \"X-Flabber-Id\": \"eefa0b3c-13ca-40b1-ac2c-fd0687b786e2\"\n  }, \n  \"origin\":
+        \"147.236.152.14\", \n  \"url\": \"https://httpbin.org/get\"\n}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '408'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Dec 2020 08:29:52 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 200
+      message: OK
+    url: https://httpbin.org/get
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      Host:
+      - httpbin.org
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - fc34f628-d404-4942-8558-46b1198bd260
+    method: PUT
+    uri: https://httpbin.org/status/301
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 16 Dec 2020 08:29:53 GMT
+      Location:
+      - /redirect/1
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    url: https://httpbin.org/status/301
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      Host:
+      - httpbin.org
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - fc34f628-d404-4942-8558-46b1198bd260
+    method: PUT
+    uri: https://httpbin.org/redirect/1
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:53 GMT
+      Server:
+      - awselb/2.0
+    status:
+      code: 404
+      message: Not Found
+    url: https://httpbin.org/redirect/1
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Host:
+      - httpbin.org
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - af0c8889-f7a2-46e3-a1db-82b8168214f5
+    method: DELETE
+    uri: https://httpbin.org/status/301
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 16 Dec 2020 08:29:53 GMT
+      Location:
+      - /redirect/1
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    url: https://httpbin.org/status/301
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Host:
+      - httpbin.org
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - af0c8889-f7a2-46e3-a1db-82b8168214f5
+    method: DELETE
+    uri: https://httpbin.org/redirect/1
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:54 GMT
+      Server:
+      - awselb/2.0
+    status:
+      code: 404
+      message: Not Found
+    url: https://httpbin.org/redirect/1
+- request:
+    body: null
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - a3552197-f422-423d-b7ef-e9107acda07d
+    method: GET
+    uri: https://httpbin.org/status/404
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:54 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 404
+      message: NOT FOUND
+    url: https://httpbin.org/status/404
+- request:
+    body:
+      testing: 123
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 9c7601f9-fbfd-4e23-9de5-dfa4988116e1
+    method: POST
+    uri: https://httpbin.org/status/404
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:55 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 404
+      message: NOT FOUND
+    url: https://httpbin.org/status/404
+- request:
+    body:
+      testing: 123
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 43a67fa1-99e3-4b1e-98f6-e40327ed514c
+    method: PUT
+    uri: https://httpbin.org/status/404
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:56 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 404
+      message: NOT FOUND
+    url: https://httpbin.org/status/404
+- request:
+    body: null
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - ab56f77b-e179-440c-83d6-dd654d33f0db
+    method: GET
+    uri: https://httpbin.org/status/501
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:56 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 501
+      message: NOT IMPLEMENTED
+    url: https://httpbin.org/status/501
+- request:
+    body:
+      testing: 123
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - 85caf5be-eb97-44a6-b18a-2155e40b3a6e
+    method: POST
+    uri: https://httpbin.org/status/501
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:57 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 501
+      message: NOT IMPLEMENTED
+    url: https://httpbin.org/status/501
+- request:
+    body:
+      testing: 123
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - the-fabricator/1.0.0
+      x-flabber-id:
+      - c970e839-846a-4c3d-b1ee-9a1d9b6d5cca
+    method: PUT
+    uri: https://httpbin.org/status/501
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 16 Dec 2020 08:29:57 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 501
+      message: NOT IMPLEMENTED
+    url: https://httpbin.org/status/501
+version: 1
