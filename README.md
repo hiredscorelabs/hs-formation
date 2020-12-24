@@ -54,7 +54,8 @@ For example, this is how Formation models a `requests` integration, with data fl
 * Additional information regarding such a request is kept _alongside_ `fmtn.req`. For example a request id is kept in the `req.id` key. This creates a flat (good thing) dict to probe. The reason additional data does not have the `fmtn` prefix is that you can always build your own that uses a different prefix (which you cant say about internal Formation inner workings).
 
 
-
+### added support for async http client via aio_http
+You can use this via ```for_aio_http```
 
 
 
