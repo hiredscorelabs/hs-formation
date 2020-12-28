@@ -7,7 +7,7 @@ interactions:
       x-custom:
       - hello
     method: GET
-    uri: http://example.com
+    uri: http://example.com/?v=1.0
   response:
     body:
       string: "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n
@@ -31,7 +31,7 @@ interactions:
       Accept-Ranges:
       - bytes
       Age:
-      - '340065'
+      - '11957'
       Cache-Control:
       - max-age=604800
       Content-Encoding:
@@ -41,15 +41,15 @@ interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Mon, 14 Dec 2020 14:28:00 GMT
+      - Thu, 24 Dec 2020 16:55:54 GMT
       Etag:
       - '"3147526947"'
       Expires:
-      - Mon, 21 Dec 2020 14:28:00 GMT
+      - Thu, 31 Dec 2020 16:55:54 GMT
       Last-Modified:
       - Thu, 17 Oct 2019 07:18:26 GMT
       Server:
-      - ECS (dcb/7F15)
+      - ECS (nyb/1D10)
       Vary:
       - Accept-Encoding
       X-Cache:
@@ -57,5 +57,5 @@ interactions:
     status:
       code: 200
       message: OK
-    url: http://example.com
+    url: http://example.com/?v=1.0
 version: 1

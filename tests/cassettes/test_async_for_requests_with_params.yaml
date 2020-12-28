@@ -5,7 +5,7 @@ interactions:
       x-custom:
       - hello
     method: GET
-    uri: http://example.com
+    uri: http://example.com/?v=1.0
   response:
     body:
       string: "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n<!DOCTYPE html PUBLIC
@@ -18,11 +18,11 @@ interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 14 Dec 2020 14:26:33 GMT
+      - Thu, 24 Dec 2020 16:53:57 GMT
       Server:
-      - ECSF (dcb/7EA7)
+      - ECSF (nyb/1D1D)
     status:
       code: 400
       message: Bad Request
-    url: http://example.com
+    url: http://example.com/?v=1.0
 version: 1

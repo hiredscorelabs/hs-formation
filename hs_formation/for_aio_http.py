@@ -14,6 +14,7 @@ from .formation import (
     _RES_HTTP_STATUS_CODE,
     _RES_HTTP_HEADERS,
     _RES_DEFAULT_TIME_OUT,
+    _RES_HTTP_REASON,
 )
 
 
@@ -213,7 +214,7 @@ async def requests_adapter(ctx):
     ) as session:
         method = getattr(session, req.method.lower())
         async with method(
-            url=req.url, data=req.data, auth=auth, cookies=req.cookies,
+            url=req.url, params=req.params, data=req.data, auth=auth, cookies=req.cookies,
         ) as response:
             async with response:
                 status, response_data, headers = await req.response_as(response)
@@ -221,5 +222,6 @@ async def requests_adapter(ctx):
                 ctx[_RES_HTTP_STATUS_CODE] = status
                 ctx[_RES_HTTP_CONTENT_LENGTH] = len(response_data)
                 ctx[_RES_HTTP_HEADERS] = headers
+                ctx[_RES_HTTP_REASON] = status
 
             return ctx

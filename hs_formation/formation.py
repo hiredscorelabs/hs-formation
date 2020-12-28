@@ -1,5 +1,6 @@
 from toolz import reduce
 
+_RES_HTTP_REASON = "fmtn.res.http.reason"
 _RES_HTTP_CONTENT_LENGTH = "fmtn.res.http.content_length"
 _RES_HTTP_HEADERS = "fmtn.res.http.headers"
 _RES_HTTP_STATUS_CODE = "fmtn.res.http.status"
