@@ -32,7 +32,7 @@ async def main():
     httpbin = AsyncHttpBin()
     try:
         (resp, _, _) = await httpbin.publish(data)
-        print(resp)
+        print(resp.parsed_content)
         print("if you see this, you have a very fast internet")
     except:
         print("call timed out, which is OK because timeout is 100ms")

@@ -12,7 +12,7 @@ def request_duration(now=datetime.datetime.now):
         start = now()
         ctx = next(ctx)
         end = now() - start
-        ctx["req.duration_us"] = math.floor(end.total_seconds() * SEC_TO_MICROSEC)
+        ctx[_REQ_DURATION] = math.floor(end.total_seconds() * SEC_TO_MICROSEC)
         return ctx
 
     return request_duration_middleware

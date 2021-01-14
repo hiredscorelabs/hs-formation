@@ -55,7 +55,7 @@ async def main():
         print("requesting...")
         # (_status, _text, _headers) = await async_breaker.go()
         try:
-            (_status, _text, _headers) = await async_breaker.go()
+            (_res, _status, _headers) = await async_breaker.go()
         except Exception as ex:
             # traceback.print_exc()
             print(ex.__class__)

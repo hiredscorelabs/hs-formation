@@ -224,41 +224,57 @@ async def test_async_json_all(snapshot):
 @pytest.mark.asyncio
 async def test_async_html_response(snapshot):
     google = Google()
-    snapshot.assert_match(await google.go("/?q=formation"))
+    result = await google.go("/?q=formation")
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
     # force error
-    snapshot.assert_match(await google.go("/aint-no-body-here"))
+    result = await google.go("/aint-no-body-here")
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
 
 @pytest.mark.vcr()
 @pytest.mark.asyncio
 async def test_async_raw_response(snapshot):
     google = GoogleRaw()
-    snapshot.assert_match(await google.go("/?q=formation"))
+    result = await google.go("/?q=formation")
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
     # force error
-    snapshot.assert_match(await google.go("/aint-no-body-here"))
+    result = await google.go("/aint-no-body-here")
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
 
 @pytest.mark.vcr()
 @pytest.mark.asyncio
 async def test_async_xmldict_response(snapshot):
     cl = XmlToDict()
-    snapshot.assert_match(await cl.go())
+    result = await cl.go()
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
 
 @pytest.mark.vcr()
 @pytest.mark.asyncio
 async def test_async_text_response(snapshot):
     google = GoogleText()
-    snapshot.assert_match(await google.go("/?q=formation"))
+    result = await google.go("/?q=formation")
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
 
 @pytest.mark.vcr()
 @pytest.mark.asyncio
 async def test_async_json_response(snapshot):
     github = Github()
-    snapshot.assert_match(await github.stargazers("jondot", "formation"))
+    result = await github.stargazers("jondot", "formation")
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
     # force error
-    snapshot.assert_match(await github.stargazers("no-body", "formation"))
+    result = await github.stargazers("no-body", "formation")
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)

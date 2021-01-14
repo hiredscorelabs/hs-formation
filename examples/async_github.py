@@ -33,7 +33,7 @@ class AsyncGithub(object):
 async def main():
     github = AsyncGithub()
     (res, _, _) = await github.stargazers("jondot", "formation")
-    print(res)
+    print(res.parsed_content)
 
 
 if __name__ == "__main__":

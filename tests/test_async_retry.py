@@ -50,7 +50,9 @@ class HttpBinBad(object):
 @pytest.mark.asyncio
 async def test_async_retry(snapshot):
     c = HttpBinNice()
-    snapshot.assert_match(await c.get())
+    result = await c.get()
+    snapshot.assert_match(result)
+    snapshot.assert_match(result[0].parsed_content)
 
 
 @pytest.mark.vcr()

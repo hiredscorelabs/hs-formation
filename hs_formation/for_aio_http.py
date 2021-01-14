@@ -10,11 +10,8 @@ from .formation import (
     _REQ_HTTP,
     _RES_HTTP,
     _SESSION,
-    _RES_HTTP_CONTENT_LENGTH,
-    _RES_HTTP_STATUS_CODE,
-    _RES_HTTP_HEADERS,
     _RES_DEFAULT_TIME_OUT,
-    _RES_HTTP_REASON,
+    _REQ_DURATION
 )
 
 
@@ -25,6 +22,7 @@ __all__ = [
     "async_json_response",
     "async_xmltodict_response",
     "async_text_response",
+    "async_raw_response",
 ]
 
 
@@ -83,7 +81,7 @@ class FormationAIOHttpRequest:
     json = attrib(default=None)
     timeout = attrib(default=None)
     allow_redirects: bool = attrib(default=True)
-    response_as = attrib(default=None)
+    content_resolver = attrib(default=None)
 
 
 def params_filter(p):
@@ -103,42 +101,43 @@ def apply_params(url, params):
 
 
 def get_response(ctx):
-    return (
-        ctx.get(_RES_HTTP_STATUS_CODE, None),
-        ctx.get(_RES_HTTP, None),
-        ctx.get(_RES_HTTP_HEADERS, None),
-    )
+    return ctx.get(_RES_HTTP, None)
+
+
+def get_response_result(ctx):
+    response = get_response(ctx)
+    if response is None:
+        return None, None, None
+    return response, response.status, response.headers
 
 
 async def async_raw_response(response):
-    if response is None:
-        return None, None, None
-    raw_byte_response = await response.read()
-    if raw_byte_response is None:
-        return None, None, None
-    return response.status, raw_byte_response, response.raw_headers
+    if response is not None:
+        response_data = await response.read()
+        response.parsed_content = response_data
+    return response
 
 
 async def async_json_response(response):
-    if response is None:
-        return None, None, None
-    response_data = await response.json()
-    return response.status, response_data, response.headers
+    if response is not None:
+        response_data = await response.json()
+        response.parsed_content = response_data
+    return response
 
 
 async def async_xmltodict_response(response):
-    if response is None:
-        return None, None, None
-    response_txt = await response.text()
-    response_data = xmltodict.parse(response_txt)
-    return response.status, response_data, response.headers
+    if response is not None:
+        response_txt = await response.text()
+        response_data = xmltodict.parse(response_txt)
+        response.parsed_content = response_data
+    return response
 
 
 async def async_text_response(response):
-    if response is None:
-        return None, None, None
-    response_data = await response.text()
-    return response.status, response_data, response.headers
+    if response is not None:
+        response_data = await response.text()
+        response.parsed_content = response_data
+    return response
 
 
 def build_sender(
@@ -151,23 +150,24 @@ def build_sender(
     async def sender(
         method,
         url,
-        session_context={},
-        params={},
+        session_context=None,
+        params=None,
         response_as=default_response_as,
         **kwargs
     ):
+        params = params or {}
         params = params if isinstance(params, dict) else params.to_dict()
         (url, params) = apply_params(url, params)
         req = FormationAIOHttpRequest(
             url=urljoin(base_uri, url),
             method=method,
             params=params,
-            response_as=response_as,
+            content_resolver=response_as,
             **kwargs
         )
-        ctx = {_REQ_HTTP: req, _SESSION: session_context}
+        ctx = {_REQ_HTTP: req, _SESSION: session_context or {}}
         ctx = await wrapped(ctx)
-        return get_response(ctx)
+        return get_response_result(ctx)
 
     return sender
 
@@ -217,11 +217,19 @@ async def requests_adapter(ctx):
             url=req.url, params=req.params, data=req.data, auth=auth, cookies=req.cookies,
         ) as response:
             async with response:
-                status, response_data, headers = await req.response_as(response)
-                ctx[_RES_HTTP] = response_data
-                ctx[_RES_HTTP_STATUS_CODE] = status
-                ctx[_RES_HTTP_CONTENT_LENGTH] = len(response_data)
-                ctx[_RES_HTTP_HEADERS] = headers
-                ctx[_RES_HTTP_REASON] = status
+                response = await req.content_resolver(response)
+                # Compatibility with original response objects
+                response.request = req
+                response.status_code = response.status
+                response.elapsed = ResponseElapsed(ctx)
+                ctx[_RES_HTTP] = response
 
             return ctx
+
+
+class ResponseElapsed:
+    def __init__(self, ctx):
+        self.ctx = ctx
+
+    def total_seconds(self):
+        return self.ctx.get(_REQ_DURATION) / 10e6

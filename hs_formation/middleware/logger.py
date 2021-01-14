@@ -3,9 +3,6 @@ from ..formation import (
     _RES_HTTP,
     _CONTEXT,
     _REQ_DURATION,
-    _RES_HTTP_HEADERS,
-    _RES_HTTP_STATUS_CODE,
-    _RES_HTTP_CONTENT_LENGTH,
 )
 from toolz.curried import valfilter
 
@@ -56,17 +53,19 @@ def async_request_logger(logger):
 
         ctx = await next(ctx)
 
+        res = ctx[_RES_HTTP]
+
         msg = "after response.http"
         await log.info(
             msg,
-            url=req.url,
-            status=ctx.get(_RES_HTTP_STATUS_CODE),
-            method=req.method,
-            elapsed=ctx.get(_REQ_DURATION, None),
-            size=ctx.get(_RES_HTTP_CONTENT_LENGTH),
+            url=res.request.url,
+            status=res.status_code,
+            method=res.request.method,
+            elapsed=res.elapsed,
+            size=len(res.parsed_content if hasattr(res, "parsed_content") else res.content),
             duration_us=ctx.get(_REQ_DURATION, None),
         )
-        await log.debug(msg, headers=ctx.get(_RES_HTTP_HEADERS))
+        await log.debug(msg, headers=res.headers)
         return ctx
 
     return request_logger_middleware
