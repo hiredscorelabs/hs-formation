@@ -31,7 +31,7 @@ def request_logger(logger):
             method=res.request.method,
             elapsed=res.elapsed,
             size=len(res.content),
-            duration_us=ctx.get(_REQ_DURATION, None),
+            duration_us=ctx.get(_REQ_DURATION, None)
         )
         log.debug(msg, headers=res.headers)
         return ctx
