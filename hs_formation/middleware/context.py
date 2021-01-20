@@ -32,7 +32,7 @@ def get_context(
     }
 
 
-def call_context_fnc(ctx, context_fn, scope, env, sha, version, getpid, gettid):
+def call_context_fnc(ctx, context_fn, namespace, scope, env, sha, version, getpid, gettid):
     request_id = ctx.get(_REQ_ID, None)
     request_parent_id = ctx.get(_REQ_PARENT_ID, None)
     uid = get_in([_SESSION, _UID], None)
@@ -40,6 +40,7 @@ def call_context_fnc(ctx, context_fn, scope, env, sha, version, getpid, gettid):
     ctx[_CONTEXT] = context_fn(
         env=env,
         sha=sha,
+        namespace=namespace,
         version=version,
         request_id=request_id,
         request_parent_id=request_parent_id,
@@ -63,7 +64,7 @@ def context(
 ):
     def context_middleware(ctx, call):
         ctx = call_context_fnc(
-            ctx, context_fn, scope, env, sha, version, getpid, gettid
+            ctx, context_fn, namespace, scope, env, sha, version, getpid, gettid
         )
         ctx = call(ctx)
         return ctx
@@ -83,7 +84,7 @@ def async_context(
 ):
     async def context_middleware(ctx, call):
         ctx = call_context_fnc(
-            ctx, context_fn, scope, env, sha, version, getpid, gettid
+            ctx, context_fn, namespace, scope, env, sha, version, getpid, gettid
         )
         ctx = await call(ctx)
         return ctx
