@@ -10,5 +10,6 @@ echo "__version__ = '$NEW_VER'" > hs_formation/__version__.py
 sed "s/version = \"${OLD_VER}\"/version = \"${NEW_VER}\"/g" pyproject.toml | tee pyproject.toml
 git commit -am"[CI] bump version to ${NEW_VER}"
 git tag "v${NEW_VER}"
-git push $TARGET_REMOTE master --follow-tags
+git push $TARGET_REMOTE master
+git push $TARGET_REMOTE --tags
 echo "Now run 'poetry publish --build'"
