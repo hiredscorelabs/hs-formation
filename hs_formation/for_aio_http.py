@@ -120,7 +120,7 @@ async def async_raw_response(response):
 
 async def async_json_response(response):
     if response is not None:
-        response_data = await response.json()
+        response_data = await response.json(content_type=None)
         response.parsed_content = response_data
     return response
 
@@ -214,7 +214,7 @@ async def requests_adapter(ctx):
     ) as session:
         method = getattr(session, req.method.lower())
         async with method(
-            url=req.url, params=req.params, data=req.data, auth=auth, cookies=req.cookies,
+            url=req.url, params=req.params, data=req.data, auth=auth, cookies=req.cookies, json=req.json
         ) as response:
             async with response:
                 response = await req.content_resolver(response)
