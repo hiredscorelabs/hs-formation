@@ -1,5 +1,4 @@
 import pytest
-import hs_formation.for_requests
 from hs_formation.for_requests import (
     client,
     html_response,
@@ -77,13 +76,13 @@ class HttpBin(object):
 
 @serde
 @attrs
-class Query(object):
+class Query:
     owner = attrib(metadata={"to": [":owner"]})
     repo = attrib(metadata={"to": [":repo"]})
 
 
 @client
-class Github(object):
+class Github:
     base_uri = "https://api.github.com/"
     middleware = []
     response_as = json_response
@@ -95,7 +94,7 @@ class Github(object):
 
 
 @client
-class Google(object):
+class Google:
     base_uri = "https://www.google.com/"
     response_as = html_response
 
@@ -104,7 +103,7 @@ class Google(object):
 
 
 @client
-class GoogleRaw(object):
+class GoogleRaw:
     base_uri = "https://www.google.com/"
     response_as = raw_response
 
@@ -113,7 +112,7 @@ class GoogleRaw(object):
 
 
 @client
-class XmlToDict(object):
+class XmlToDict:
     base_uri = "https://httpbin.org"
     response_as = xmltodict_response
 
@@ -122,7 +121,7 @@ class XmlToDict(object):
 
 
 @client
-class GoogleText(object):
+class GoogleText:
     base_uri = "https://www.google.com/"
     response_as = text_response
 

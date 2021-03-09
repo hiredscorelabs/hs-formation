@@ -1,6 +1,8 @@
-from hs_formation.for_requests import build_sender, apply_params
-from hs_formation.middleware import ua, accept
 import pytest
+
+from hs_formation.formation import apply_params
+from hs_formation.for_requests import Sender
+from hs_formation.middleware import ua, accept
 
 
 def test_apply_params(snapshot):
@@ -14,15 +16,14 @@ def test_apply_params(snapshot):
 
 @pytest.mark.vcr()
 def test_for_requests():
-    sender = build_sender(middleware=[])
-    sender("get", "http://example.com")
+    sender = Sender(middleware=[])
+    sender.get("http://example.com")
 
 
 @pytest.mark.vcr()
 def test_for_requests_with_params():
-    sender = build_sender(middleware=[])
-    sender(
-        "get",
+    sender = Sender(middleware=[])
+    sender.get(
         "http://example.com",
         headers={"x-custom": "hello"},
         params={"v": "1.0"},
@@ -32,25 +33,20 @@ def test_for_requests_with_params():
 
 @pytest.mark.vcr()
 def test_ua():
-    sender = build_sender(middleware=[ua("foobar/1.0.0")])
-    sender(
-        "get", "http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"}
-    )
-
+    sender = Sender(middleware=[ua("foobar/1.0.0")])
+    sender.get("http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"})
+ 
 
 @pytest.mark.vcr()
 def test_accept():
-    sender = build_sender(middleware=[accept("application/json")])
-    sender(
-        "get", "http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"}
-    )
+    sender = Sender(middleware=[accept("application/json")])
+    sender.get("http://example.com", headers={"x-custom": "hello"}, params={"v": "1.0"})
 
 
 @pytest.mark.vcr()
 def test_cookies():
-    sender = build_sender(middleware=[])
-    sender(
-        "get",
+    sender = Sender(middleware=[])
+    sender.get(
         "http://example.com",
         headers={"x-custom": "hello"},
         params={"v": "1.0"},
