@@ -1,5 +1,5 @@
 from hs_formation.for_requests import client, json_response
-from hs_formation.middleware import request_logger
+from hs_formation.middleware import request_logger, request_duration
 from attr import attrib, attrs
 from attrs_serde import serde
 import structlog
@@ -15,7 +15,10 @@ class Query(object):
 @client
 class Github(object):
     base_uri = "https://api.github.com/"
-    middleware = [request_logger(structlog.getLogger())]
+    middleware = [
+        request_logger(structlog.getLogger()),
+        request_duration(),
+    ]
     response_as = json_response
 
     def stargazers(self, owner, repo):
@@ -29,5 +32,5 @@ class Github(object):
 
 if __name__ == "__main__":
     github = Github()
-    (res, _, _) = github.stargazers("jondot", "formation")
-    print(res)
+    response = github.stargazers("jondot", "formation")
+    print(response)

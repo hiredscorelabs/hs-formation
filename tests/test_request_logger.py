@@ -1,6 +1,6 @@
 from .utils import DummyLogger
 from toolz.curried import update_in, keyfilter
-from hs_formation.for_requests import build_sender
+from hs_formation.for_requests import Sender
 from hs_formation.middleware import (
     request_id,
     context,
@@ -33,8 +33,8 @@ def sanitize(d):
 @pytest.mark.vcr()
 def test_default_stack(snapshot):
     logger = DummyLogger()
-    sender = build_sender(middleware=get_test_stack(logger))
-    sender("get", "http://example.com")
+    sender = Sender(middleware=get_test_stack(logger))
+    sender.get("http://example.com")
     snapshot.assert_match(
         list(
             map(
