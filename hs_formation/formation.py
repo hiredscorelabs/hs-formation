@@ -5,6 +5,7 @@ from toolz import reduce
 from toolz.curried import keyfilter, reduce
 from urllib.parse import urljoin
 from attr import attrib, attrs
+from functools import partial
 
 _REQ_HTTP = "fmtn.req.http"
 _RES_HTTP = "fmtn.res.http"
@@ -42,7 +43,7 @@ class BaseSender(ABC):
         pass
 
 
-def client_decorator(cls, sender_class: Type[BaseSender]):
+def client_decorator(cls, sender_class: Type[BaseSender], session_class: Type[BaseSender] = None):
     original_init = cls.__init__
 
     def now_iso(self):
@@ -53,7 +54,7 @@ def client_decorator(cls, sender_class: Type[BaseSender]):
 
     def init(self, *args, **kwargs):
         original_init(self, *args, **kwargs)
-        base_uri = kwargs.get(
+        self.base_uri = kwargs.get(
             "base_uri", getattr(self.__class__, "base_uri", "http://localhost")
         )
         response_as = kwargs.get(
@@ -63,9 +64,12 @@ def client_decorator(cls, sender_class: Type[BaseSender]):
             "middleware", getattr(self.__class__, "middleware", [])
         ) or []
         self.request = sender_class(
-            middleware=middleware, base_uri=base_uri, default_response_as=response_as
+            middleware=middleware, base_uri=self.base_uri, default_response_as=response_as
         )
-        self.base_uri = base_uri
+        if session_class:
+            self.session = partial(session_class,
+                middleware=middleware, base_uri=self.base_uri, default_response_as=response_as
+            )
 
     cls.path = path
     cls.now_iso = now_iso

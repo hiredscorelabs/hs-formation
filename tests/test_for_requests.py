@@ -1,7 +1,7 @@
 import pytest
 
 from hs_formation.formation import apply_params
-from hs_formation.for_requests import Sender
+from hs_formation.for_requests import Sender, SessionSender
 from hs_formation.middleware import ua, accept
 
 
@@ -52,3 +52,10 @@ def test_cookies():
         params={"v": "1.0"},
         cookies={"clientSession": "session"},
     )
+
+
+@pytest.mark.vcr()
+def test_session_object():
+    with SessionSender(middleware=[]) as session1:
+        with SessionSender(middleware=[]) as session2:
+            assert session1.session != session2.session
