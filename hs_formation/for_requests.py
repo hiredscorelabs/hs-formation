@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 import requests
 from urllib.parse import urljoin
 from .formation import FormationHttpRequest, apply_params, client_decorator, get_response, wrap, _REQ_HTTP, _RES_HTTP, \
@@ -16,7 +17,7 @@ __all__ = [
 
 
 def client(cls):
-    return client_decorator(cls, Sender)
+    return client_decorator(cls, Sender, SessionSender)
 
 
 def _raw_response(ctx):
@@ -58,7 +59,7 @@ def text_response(ctx):
     return res.text, res.status_code, res.headers
 
 
-class Sender(BaseSender):
+class BaseRequestsSender(BaseSender, ABC):
     def __init__(self, middleware=None, base_uri=None, default_response_as=None):
         super().__init__(middleware, base_uri, default_response_as or _raw_response)
 
@@ -75,17 +76,36 @@ class Sender(BaseSender):
         ctx = {_REQ_HTTP: request}
         if session_context:
             ctx[_SESSION] = session_context
-        ctx = wrap(requests_adapter, middleware=self.middleware)(ctx)
+        ctx = wrap(self._get_adapter, middleware=self.middleware)(ctx)
         resolved_response_as = response_as or self.default_response_as
-        return resolved_response_as(ctx)
+        return resolved_response_as(ctx)    
+    
+    @abstractmethod
+    def _get_adapter(self, ctx):
+        pass
 
 
-def requests_adapter(ctx):
+class Sender(BaseRequestsSender):
+    def _get_adapter(self, ctx):
+        return _requests_adapter(ctx, requests)
+
+
+class SessionSender(BaseRequestsSender):
+    def __enter__(self):
+        self.session = requests.Session()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.session.close()
+
+    def _get_adapter(self, ctx):
+        return _requests_adapter(ctx, self.session)
+
+
+def _requests_adapter(ctx, requests_obj):
     req = ctx[_REQ_HTTP]
-    method = getattr(requests, req.method.lower())
-    # TODO ship var as kwargs and not explicitly
-
-    res = method(
+    method = getattr(requests_obj, req.method.lower())
+    ctx[_RES_HTTP] = method(
         req.url,
         headers=req.headers,
         cookies=req.cookies,
@@ -97,5 +117,4 @@ def requests_adapter(ctx):
         timeout=req.timeout,
         allow_redirects=req.allow_redirects,
     )
-    ctx[_RES_HTTP] = res
     return ctx
