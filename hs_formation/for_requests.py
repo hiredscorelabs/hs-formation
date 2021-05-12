@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from collections.abc import Iterable
 import requests
 from urllib.parse import urljoin
 from .formation import FormationHttpRequest, apply_params, client_decorator, get_response, wrap, _REQ_HTTP, _RES_HTTP, \
@@ -65,7 +66,7 @@ class BaseRequestsSender(BaseSender, ABC):
 
     def send(self, method, url, session_context=None, params=None, response_as=None, **kwargs):
         params = params or {}
-        params = params if isinstance(params, dict) else params.to_dict()
+        params = params if isinstance(params, Iterable) else params.to_dict()
         (url, params) = apply_params(url, params)
         request = FormationHttpRequest(
             url=urljoin(self.base_uri, url), method=method, params=params, **kwargs
@@ -78,8 +79,8 @@ class BaseRequestsSender(BaseSender, ABC):
             ctx[_SESSION] = session_context
         ctx = wrap(self._get_adapter, middleware=self.middleware)(ctx)
         resolved_response_as = response_as or self.default_response_as
-        return resolved_response_as(ctx)    
-    
+        return resolved_response_as(ctx)
+
     @abstractmethod
     def _get_adapter(self, ctx):
         pass
