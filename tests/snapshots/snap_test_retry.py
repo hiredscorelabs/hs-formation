@@ -7,7 +7,7 @@ from snapshottest import Snapshot
 
 snapshots = Snapshot()
 
-snapshots['test_retry 1'] = '''(
+snapshots['test_retry 1'] = (
     {
         'args': {
         },
@@ -71,4 +71,4 @@ snapshots['test_retry 1'] = '''(
             '1; mode=block'
         )
     ]
-)'''
+)

@@ -2,20 +2,18 @@
 # snapshottest: v1 - https://goo.gl/zC4yUc
 from __future__ import unicode_literals
 
-from snapshottest import Snapshot
+from snapshottest import GenericRepr, Snapshot
 
 
 snapshots = Snapshot()
 
-snapshots['test_async_retry 1'] = '''(
-    <ClientResponse(https://httpbin.org/get) [200 OK]>
-<CIMultiDictProxy('Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*', 'Connection': 'keep-alive', 'Content-Length': '310', 'Content-Type': 'application/json', 'Date': 'Tue, 15 Dec 2020 20:55:02 GMT', 'Server': 'gunicorn/19.9.0')>
-,
+snapshots['test_async_retry 1'] = (
+    GenericRepr("<ClientResponse(https://httpbin.org/get) [200 OK]>\n<CIMultiDictProxy('Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*', 'Connection': 'keep-alive', 'Content-Length': '310', 'Content-Type': 'application/json', 'Date': 'Tue, 15 Dec 2020 20:55:02 GMT', 'Server': 'gunicorn/19.9.0')>\n"),
     200,
-    <CIMultiDictProxy('Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*', 'Connection': 'keep-alive', 'Content-Length': '310', 'Content-Type': 'application/json', 'Date': 'Tue, 15 Dec 2020 20:55:02 GMT', 'Server': 'gunicorn/19.9.0')>
-)'''
+    GenericRepr("<CIMultiDictProxy('Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Origin': '*', 'Connection': 'keep-alive', 'Content-Length': '310', 'Content-Type': 'application/json', 'Date': 'Tue, 15 Dec 2020 20:55:02 GMT', 'Server': 'gunicorn/19.9.0')>")
+)
 
-snapshots['test_async_retry 2'] = '''{
+snapshots['test_async_retry 2'] = {
     'args': {
     },
     'headers': {
@@ -27,4 +25,4 @@ snapshots['test_async_retry 2'] = '''{
     },
     'origin': '147.236.152.14',
     'url': 'https://httpbin.org/get'
-}'''
+}
