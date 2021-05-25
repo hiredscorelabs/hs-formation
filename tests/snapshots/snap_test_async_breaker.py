@@ -7,7 +7,7 @@ from snapshottest import Snapshot
 
 snapshots = Snapshot()
 
-snapshots['test_async_circuit_breaker_middleware 1'] = '''[
+snapshots['test_async_circuit_breaker_middleware 1'] = [
     [
         'info',
         'circuitbreaker.open',
@@ -44,4 +44,4 @@ snapshots['test_async_circuit_breaker_middleware 1'] = '''[
         {
         }
     ]
-]'''
+]
