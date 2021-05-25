@@ -1,7 +1,6 @@
 import pytest
-from attr import attrib, attrs
-from attrs_serde import serde
 
+from hs_formation.utils.attrs_serde import serde
 from hs_formation.for_aio_http import (
     async_client,
     async_json_response,
@@ -9,7 +8,6 @@ from hs_formation.for_aio_http import (
     async_xmltodict_response,
     async_text_response,
 )
-
 from hs_formation.middleware import (
     async_request_logger,
     async_ua,
@@ -19,7 +17,7 @@ from hs_formation.middleware import (
     async_request_duration,
 )
 from tests.utils import AsyncDummyLogger
-
+from attr import attrib, attrs
 
 @async_client
 class HttpBin(object):

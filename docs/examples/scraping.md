@@ -12,8 +12,8 @@ When you use `html_response` you get an xpath/css selector ready result:
 ```py
 from hs_formation.for_requests import client, html_response
 from hs_formation.middleware import request_logger
+from hs_formation.utils.attrs_serde import serde
 from attr import attrib, attrs
-from attrs_serde import serde
 import structlog
 
 @client
