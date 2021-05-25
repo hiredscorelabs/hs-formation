@@ -2,8 +2,8 @@ import asyncio
 
 from hs_formation.for_aio_http import async_client, async_json_response
 from hs_formation.middleware import async_request_logger
+from hs_formation.utils.attrs_serde import serde
 from attr import attrib, attrs
-from attrs_serde import serde
 
 from tests.utils import AsyncDummyLogger
 

@@ -1,4 +1,5 @@
 from hs_formation.for_requests import client, html_response
+from hs_formation.utils.attrs_serde import serde
 import traceback
 from hs_formation.middleware import (
     request_logger,
@@ -7,7 +8,6 @@ from hs_formation.middleware import (
     timeout,
 )
 from attr import attrib, attrs
-from attrs_serde import serde
 from time import sleep
 import structlog
 

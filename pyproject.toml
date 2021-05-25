@@ -24,7 +24,6 @@ pybreaker = ">=0.4.5"
 xmltodict = ">=0.11.0"
 lxml = ">=4.2"
 attrs = ">=19.1"
-attrs-serde = ">=0.2.2"
 aiohttp = ">=3.7.3"
 aiobreaker = ">=1.1.0"
 
