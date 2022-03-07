@@ -14,7 +14,7 @@ flake8==3.8.4; (python_version >= "2.7" and python_full_version < "3.0.0") or (p
 idna==2.10; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 importlib-metadata==3.3.0; python_version < "3.8" and python_version >= "3.6" and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6") and (python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.8" or python_full_version >= "3.4.0" and python_version < "3.8" and python_version >= "3.6") and (python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.8" or python_full_version >= "3.5.0" and python_version >= "3.6" and python_version < "3.8")
 iniconfig==1.1.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-lxml==4.6.2; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
+lxml==4.7.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 mccabe==0.6.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
 multidict==5.1.0; python_version >= "3.6"
 packaging==20.8; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
