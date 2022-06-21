@@ -35,6 +35,9 @@ class BaseSender(ABC):
     def put(self, path, **kwargs):
         return self.send("put", path, **kwargs)
 
+    def patch(self, path, **kwargs):
+        return self.send("patch", path, **kwargs)
+
     def delete(self, path, **kwargs):
         return self.send("delete", path, **kwargs)
 
