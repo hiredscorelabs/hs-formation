@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hs-formation"
-version = "5.2.0"
+version = "5.3.0"
 authors = ["Dotan Nahum <jondotan@gmail.com>", "HiredScoreLabs <oss@hiredscore.com>"]
 description = "A generic functional middleware infrastructure for Python."
 
