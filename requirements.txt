@@ -20,7 +20,7 @@ multidict==5.1.0; python_version >= "3.6"
 packaging==20.8; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 pluggy==0.13.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 py-cpuinfo==7.0.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-py==1.10.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+py==1.11.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 pybreaker==0.4.5
 pycodestyle==2.6.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
 pyflakes==2.2.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
