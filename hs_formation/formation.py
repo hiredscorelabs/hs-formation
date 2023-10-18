@@ -66,7 +66,8 @@ def client_decorator(cls, sender_class: Type[BaseSender], session_class: Type[Ba
         middleware = kwargs.get(
             "middleware", getattr(self.__class__, "middleware", [])
         ) or []
-        self.request = sender_class(
+        sender_class_param = getattr(self.__class__, "sender_class", None) or sender_class
+        self.request = sender_class_param(
             middleware=middleware, base_uri=self.base_uri, default_response_as=response_as
         )
         if session_class:
